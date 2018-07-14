@@ -8,9 +8,11 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "nick.settings")
+os.environ["DJANGO_SETTINGS_MODULE"] = "nick.settings"
+sys.path.insert(0, '/opt/nick/')
 
 application = get_wsgi_application()
