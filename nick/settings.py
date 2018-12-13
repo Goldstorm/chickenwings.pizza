@@ -25,8 +25,8 @@ SECRET_KEY = 'rlmwt7nyl8yxf)na+6*o(k)1b8@-h@wy=e01d=^32e24&x1-w2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['nickgoldstein.com', '10.0.0.18']
-
 
 # Application definition
 

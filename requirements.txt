@@ -1,0 +1,8 @@
+django
+djangorestframework
+requests
+python-gnupg
+celery
+dnspython
+zeep
+
