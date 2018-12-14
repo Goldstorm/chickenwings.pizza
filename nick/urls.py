@@ -19,6 +19,6 @@ from rest_framework import generics
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('api.quickstart.urls')),
+    path('api/', include('api.attempt.urls')),
 
 ]
