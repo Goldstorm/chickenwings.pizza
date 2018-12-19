@@ -20,5 +20,4 @@ from rest_framework import generics
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.attempt.urls')),
-
 ]

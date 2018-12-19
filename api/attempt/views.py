@@ -48,31 +48,38 @@ class LocalFunctions:
     def jResp(self, resp, status, safe=False):
         return JsonResponse(resp, status=status, safe=safe)
 
-    def proccess_request(self, request):
+    def proccess_request(self, request, param1):
         def build_jResp(body):
             jsonR = body
             return jsonR
 
-        body = self.body
-
         if request.method == 'POST':
-            j = build_jResp(body)
+            j = build_jResp('STANK')
             self.resp('INFO', "Successfully returned the body you sent with method POST!", j)
             return self.jResp(self.response, status=status.HTTP_200_OK, safe=False)
 
         elif request.method == 'GET':
-            j = build_jResp(body)
+            j = build_jResp(param1)
             self.resp('INFO', "Successfully returned the body you sent with method GET!", j)
             return self.jResp(self.response, status=status.HTTP_200_OK, safe=False)
-
+        
 class API_PROCCESSOR(APIView):
-    def get(self, request, format=None):
+    def get(self, request, param1, format=None):
         lf = LocalFunctions(request)
-        proccess_resp = lf.proccess_request(request=request)
+        proccess_resp = lf.proccess_request(request=request, param1=param1)
         if proccess_resp:
             return proccess_resp
         else:
             r = lf.resp('ERROR,', 'Unable to process response, go into debug mode and figure it out biatch!', None)
             return lf.jResp(r, status=status.HTTP_400_BAD_REQUEST, safe=False)
 
+    def post(self, request, param1=None, format=None):
+        lf = LocalFunctions(request)
+        proccess_resp = lf.proccess_request(request=request, param1=param1)
+        if proccess_resp:
+            return proccess_resp
+        else:
+            r = lf.resp('ERROR,', 'Unable to process response, go into debug mode and figure it out biatch!', None)
+            return lf.jResp(r, status=status.HTTP_400_BAD_REQUEST, safe=False)
+        
 
