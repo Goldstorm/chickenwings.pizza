@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/VHwZ7uC.png" />
+  <meta name="google-site-verification" content="aggjpx_7gqhg4kX_RCxgGB2GQScbAYL6trCIHUTx4b0" />
+  <title>Excellence and hugs</title>
+  <style>
+  body
+  {background-image: url("https://i.gifer.com/76YY.gif");
+               background-size: tile;
+}
+  h1   {background-image: url("https://media.discordapp.net/attachments/145682129164959745/427295460416290827/headergoji.png");
+        width: 1018px;
+        height: 332px;
+        color: black;
+        text-shadow: 3px 2px red}
+  </style>
+  <script type="text/javascript">
+  // <![CDATA[
+  var colour="#ff00f0";
+  var sparkles=120;
+
+  /****************************
+  *  Tinkerbell Magic Sparkle *
+  * (c) 2005 mf2fm web-design *
+  *  http://www.mf2fm.com/rv  *
+  * DON'T EDIT BELOW THIS BOX *
+  ****************************/
+  var x=ox=400;
+  var y=oy=300;
+  var swide=800;
+  var shigh=600;
+  var sleft=sdown=0;
+  var tiny=new Array();
+  var star=new Array();
+  var starv=new Array();
+  var starx=new Array();
+  var stary=new Array();
+  var tinyx=new Array();
+  var tinyy=new Array();
+  var tinyv=new Array();
+
+  window.onload=function() { if (document.getElementById) {
+    var i, rats, rlef, rdow;
+    for (var i=0; i<sparkles; i++) {
+      var rats=createDiv(3, 3);
+      rats.style.visibility="hidden";
+      document.body.appendChild(tiny[i]=rats);
+      starv[i]=0;
+      tinyv[i]=0;
+      var rats=createDiv(5, 5);
+      rats.style.backgroundColor="transparent";
+      rats.style.visibility="hidden";
+      var rlef=createDiv(1, 5);
+      var rdow=createDiv(5, 1);
+      rats.appendChild(rlef);
+      rats.appendChild(rdow);
+      rlef.style.top="2px";
+      rlef.style.left="0px";
+      rdow.style.top="0px";
+      rdow.style.left="2px";
+      document.body.appendChild(star[i]=rats);
+    }
+    set_width();
+    sparkle();
+  }}
+
+  function sparkle() {
+    var c;
+    if (x!=ox || y!=oy) {
+      ox=x;
+      oy=y;
+      for (c=0; c<sparkles; c++) if (!starv[c]) {
+        star[c].style.left=(starx[c]=x)+"px";
+        star[c].style.top=(stary[c]=y)+"px";
+        star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+        star[c].style.visibility="visible";
+        starv[c]=50;
+        break;
+      }
+    }
+    for (c=0; c<sparkles; c++) {
+      if (starv[c]) update_star(c);
+      if (tinyv[c]) update_tiny(c);
+    }
+    setTimeout("sparkle()", 40);
+  }
+
+  function update_star(i) {
+    if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+    if (starv[i]) {
+      stary[i]+=1+Math.random()*3;
+      if (stary[i]<shigh+sdown) {
+        star[i].style.top=stary[i]+"px";
+        starx[i]+=(i%5-2)/5;
+        star[i].style.left=starx[i]+"px";
+      }
+      else {
+        star[i].style.visibility="hidden";
+        starv[i]=0;
+        return;
+      }
+    }
+    else {
+      tinyv[i]=50;
+      tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+      tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+      tiny[i].style.width="2px";
+      tiny[i].style.height="2px";
+      star[i].style.visibility="hidden";
+      tiny[i].style.visibility="visible"
+    }
+  }
+
+  function update_tiny(i) {
+    if (--tinyv[i]==25) {
+      tiny[i].style.width="1px";
+      tiny[i].style.height="1px";
+    }
+    if (tinyv[i]) {
+      tinyy[i]+=1+Math.random()*3;
+      if (tinyy[i]<shigh+sdown) {
+        tiny[i].style.top=tinyy[i]+"px";
+        tinyx[i]+=(i%5-2)/5;
+        tiny[i].style.left=tinyx[i]+"px";
+      }
+      else {
+        tiny[i].style.visibility="hidden";
+        tinyv[i]=0;
+        return;
+      }
+    }
+    else tiny[i].style.visibility="hidden";
+  }
+
+  document.onmousemove=mouse;
+  function mouse(e) {
+    set_scroll();
+    y=(e)?e.pageY:event.y+sdown;
+    x=(e)?e.pageX:event.x+sleft;
+  }
+
+  function set_scroll() {
+    if (typeof(self.pageYOffset)=="number") {
+      sdown=self.pageYOffset;
+      sleft=self.pageXOffset;
+    }
+    else if (document.body.scrollTop || document.body.scrollLeft) {
+      sdown=document.body.scrollTop;
+      sleft=document.body.scrollLeft;
+    }
+    else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+      sleft=document.documentElement.scrollLeft;
+  	sdown=document.documentElement.scrollTop;
+    }
+    else {
+      sdown=0;
+      sleft=0;
+    }
+  }
+
+  window.onresize=set_width;
+  function set_width() {
+    if (typeof(self.innerWidth)=="number") {
+      swide=self.innerWidth;
+      shigh=self.innerHeight;
+    }
+    else if (document.documentElement && document.documentElement.clientWidth) {
+      swide=document.documentElement.clientWidth;
+      shigh=document.documentElement.clientHeight;
+    }
+    else if (document.body.clientWidth) {
+      swide=document.body.clientWidth;
+      shigh=document.body.clientHeight;
+    }
+  }
+
+  function createDiv(height, width) {
+    var div=document.createElement("div");
+    div.style.position="absolute";
+    div.style.height=height+"px";
+    div.style.width=width+"px";
+    div.style.overflow="hidden";
+    div.style.backgroundColor=colour;
+    return (div);
+  }
+  // ]]>
+  </script>
+
+
+
+
+ <script type="text/javascript" src="http://www.snazzyspace.com/moveobj.js"> </script>
+ <script type="text/javascript">
+
+ /***********************************************
+ * Floating image script- By Virtual_Max (http://www.geocities.com/siliconvalley/lakes/8620)
+ * Modified by Dynamic Drive for various improvements
+ * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+ ***********************************************/
+
+ //Step 1: Define unique variable names depending on number of flying images (ie:3):
+ var flyimage1, flyimage2, flyimage3
+
+ function pagestart(){
+ //Step 2: Using the same variable names as 1), add or delete more of the below lines (60=width, height=80 of image):
+  flyimage1=new Chip("flyimage1",115,194);
+  flyimage2=new Chip("flyimage2",115,194);
+  flyimage3=new Chip("flyimage3",115,194);
+
+
+ //Step 3: Using the same variable names as 1), add or delete more of the below lines:
+ movechip("flyimage1");
+ movechip("flyimage2");
+ movechip("flyimage3");
+
+ }
+
+ if (window.addEventListener)
+ window.addEventListener("load", pagestart, false)
+ else if (window.attachEvent)
+ window.attachEvent("onload", pagestart)
+ else if (document.getElementById)
+ window.onload=pagestart
+
+ </script>
+
+
+ <!-- Step 4: Define your flying images. For each image's ID tag, use the same variable names as 1) above -->
+
+ <DIV ID="flyimage1" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+ <DIV ID="flyimage2" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+ <DIV ID="flyimage3" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+
+
+
+<!--Header-->
+<body>
+  <marquee><font color="white">just think about baseball</font></marquee>
+  <center><img src="https://i.imgur.com/YfCpGxl.jpg" height="300"></center>
+  <center><img src="http://www.imagesbuddy.com/images/104/2013/08/welcome-to-my-site-graphic-for-share-on-hi5.gif" height="200"></center>
+<br>
+  <center><img src="https://i.imgur.com/2wdvG84.png"></center>
+<br>
+<br>
+
+<!--Stuff-->
+<center>  <table border="2px">
+    <head>
+      <center><font color="9400D3" size=40>A</font><font color="0000FF" size=40>B</font><font color="00FF00" size=40>o</font><font color="FFFF00" size=40>U</font><font color="FF7F00" size=40>t</font> <font color="FF0000" size=40>M</font><font color="FF0000" size=40>E</font></center>
+    </head>
+    <tr>
+      <td><img src="http://i.picasion.com/gl/87/9pZd.gif"></td>
+      <td><img src="https://i.imgur.com/Hi49WtC.jpg" width=500></td>
+    </tr>
+
+    <tr>
+      <td><img src="https://i.imgur.com/3qMHP5z.png" height=500></td>
+      <td><img src="http://i.picasion.com/gl/87/9pZe.gif"></td>
+    </tr>
+
+    <tr>
+      <td><img src="http://i.picasion.com/gl/87/9pZf.gif"></td>
+      <td><img src="https://i.imgur.com/Ni6VBWd.jpg" height=500></td>
+    </tr>
+
+    <tr>
+      <td><img src="https://i.imgur.com/TkkvnJR.jpg" height=500></td>
+      <td><img src="http://i.picasion.com/gl/87/9pZq.gif"></td>
+    </tr>
+
+    <tr>
+      <td><img src="http://i.picasion.com/gl/87/9pZA.gif"></td>
+      <td><img src="https://i.imgur.com/I0hf2zT.jpg" height=500></td>
+    </tr>
+
+    <tr>
+      <td><img src="https://i.imgur.com/yfam1Y8.jpg" height=500></td>
+      <td><img src="http://i.picasion.com/gl/87/9pZH.gif"></td>
+    </tr>
+
+    <tr>
+      <td><img src="http://i.picasion.com/gl/87/9pZL.gif"></td>
+      <td><img src="https://i.imgur.com/ALSWtgs.jpg" height=500></td>
+    </tr>
+
+  </table> </center>
+
+<div style="text-align:center">
+  <br>
+  <br>
+   <a href="https://www.reddit.com/r/cats/" target="_parent">
+   <center><img src="https://i.imgur.com/arj8vAx.jpg" alt="Waifu" width="250" height="150"></a></center>
+   <audio controls autoplay loop>
+     <source src="http://66.90.93.122/ost/8-bit-video-game-ringtones-android-game-music/ufavgduv/07-itty-bitty-8-bit.mp3">
+   </audio>
+
+ </div>
+</body>
+</html>

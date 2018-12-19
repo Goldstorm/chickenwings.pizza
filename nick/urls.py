@@ -21,5 +21,8 @@ from rest_framework import generics
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.attempt.urls')),
-    path('cwp/', include('website.urls'))
+    path('cwp/', include('websites.cwp.urls')),
+    path('emily/', include('websites.inbunn.urls')),
+    path('inbunn', include('websites.inbunn.urls')),
+    path('resume/', include('websites.resume.urls'))
 ]
