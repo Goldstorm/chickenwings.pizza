@@ -66,6 +66,8 @@ class LocalFunctions:
 class API_PROCCESSOR(APIView):
     def get(self, request, param1, format=None):
         lf = LocalFunctions(request)
+        if param1 == '':
+            param1 = request.GET.get('param1')
         proccess_resp = lf.proccess_request(request=request, param1=param1)
         if proccess_resp:
             return proccess_resp
@@ -75,6 +77,8 @@ class API_PROCCESSOR(APIView):
 
     def post(self, request, param1=None, format=None):
         lf = LocalFunctions(request)
+        if param1 == '':
+            param1 = request.GET.get('param1')
         proccess_resp = lf.proccess_request(request=request, param1=param1)
         if proccess_resp:
             return proccess_resp
