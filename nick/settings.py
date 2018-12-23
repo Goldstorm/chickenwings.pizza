@@ -14,8 +14,6 @@ import os
 import json
 
 # Opens the super secret security file not in the github.
-secrets = json.load(open('settings.json', 'r'))
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,16 +22,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secrets['SECRET_KEY']
+SECRET_KEY = 'rlmwt7nyl8yxf)na+6*o(k)1b8@-h@wy=e01d=^32e24&x1-w2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = secrets['DEBUG']
+DEBUG = True
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = secrets['ALLOWED_HOSTS']
+ALLOWED_HOSTS = ['nickgoldstein.com', 'chickenwings.pizza', 'inbunn.chickenwings.pizza', 'api.nickgoldstein.com', 'megan-murphy.com', '10.0.0.18', '127.0.0.1']
+
 # Application definition
 
-INSTALLED_APPS = secrets['INSTALLED_APPS']
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -120,3 +127,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/opt/nick/static'
+
