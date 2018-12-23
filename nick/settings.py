@@ -30,19 +30,10 @@ SECRET_KEY = secrets['SECRET_KEY']
 DEBUG = secrets['DEBUG']
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['nickgoldstein.com', 'chickenwings.pizza', 'inbunn.chickenwings.pizza', 'api.nickgoldstein.com', 'megan-murphy.com', '10.0.0.18', '127.0.0.1']
-
+ALLOWED_HOSTS = secrets['ALLOWED_HOSTS']
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-]
+INSTALLED_APPS = secrets['INSTALLED_APPS']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
