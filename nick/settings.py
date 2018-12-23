@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import json
+
+# Opens the super secret security file not in the github.
+secrets = json.load(open('nick/site_settings/settings.json', 'r'))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rlmwt7nyl8yxf)na+6*o(k)1b8@-h@wy=e01d=^32e24&x1-w2'
+SECRET_KEY = secrets['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = secrets['DEBUG']
 
 #ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['nickgoldstein.com', '10.0.0.18', '127.0.0.1']
