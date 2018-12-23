@@ -30,7 +30,7 @@ SECRET_KEY = secrets['SECRET_KEY']
 DEBUG = secrets['DEBUG']
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['nickgoldstein.com', '10.0.0.18', '127.0.0.1']
+ALLOWED_HOSTS = ['nickgoldstein.com', 'chickenwings.pizza', 'inbunn.chickenwings.pizza', 'api.nickgoldstein.com', 'megan-murphy.com', '10.0.0.18', '127.0.0.1']
 
 # Application definition
 
