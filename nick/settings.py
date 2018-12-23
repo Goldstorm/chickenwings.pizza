@@ -14,7 +14,7 @@ import os
 import json
 
 # Opens the super secret security file not in the github.
-secrets = json.load(open('nick/site_settings/settings.json', 'r'))
+secrets = json.load(open('settings.json', 'r'))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
