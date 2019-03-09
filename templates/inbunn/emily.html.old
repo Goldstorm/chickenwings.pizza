@@ -190,18 +190,70 @@
 
 
 
+ <script type="text/javascript" src="http://www.snazzyspace.com/moveobj.js"> </script>
+ <script type="text/javascript">
+
+ /***********************************************
+ * Floating image script- By Virtual_Max (http://www.geocities.com/siliconvalley/lakes/8620)
+ * Modified by Dynamic Drive for various improvements
+ * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+ ***********************************************/
+
+ //Step 1: Define unique variable names depending on number of flying images (ie:3):
+ var flyimage1, flyimage2, flyimage3
+
+ function pagestart(){
+ //Step 2: Using the same variable names as 1), add or delete more of the below lines (60=width, height=80 of image):
+  flyimage1=new Chip("flyimage1",115,194);
+  flyimage2=new Chip("flyimage2",115,194);
+  flyimage3=new Chip("flyimage3",115,194);
+
+
+ //Step 3: Using the same variable names as 1), add or delete more of the below lines:
+ movechip("flyimage1");
+ movechip("flyimage2");
+ movechip("flyimage3");
+
+ }
+
+ if (window.addEventListener)
+ window.addEventListener("load", pagestart, false)
+ else if (window.attachEvent)
+ window.attachEvent("onload", pagestart)
+ else if (document.getElementById)
+ window.onload=pagestart
+
+ </script>
+
+
+ <!-- Step 4: Define your flying images. For each image's ID tag, use the same variable names as 1) above -->
+
+ <DIV ID="flyimage1" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+ <DIV ID="flyimage2" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+ <DIV ID="flyimage3" STYLE="position:absolute; left: -500px; width:115; height:194;">
+ <IMG SRC="http://www.snazzyspace.com/movingobjects/standing-kitten.png" BORDER=0></a>
+ </DIV>
+
+
+
 
 <!--Header-->
 <body>
   <marquee><font color="white">just think about baseball</font></marquee>
-  <center><img src="https://i.imgur.com/2wdvG84.png" height="300"></center>
-  <center><img src="https://i.imgur.com/OEGPdPF.gif" height="200"></center>
+  <center><img src="https://i.imgur.com/YfCpGxl.jpg" height="300"></center>
+  <center><img src="http://www.imagesbuddy.com/images/104/2013/08/welcome-to-my-site-graphic-for-share-on-hi5.gif" height="200"></center>
 <br>
+  <center><img src="https://i.imgur.com/2wdvG84.png"></center>
 <br>
 <br>
 
 <!--Stuff-->
-<!--table of stuff
 <center>  <table border="2px">
     <head>
       <center><font color="9400D3" size=40>A</font><font color="0000FF" size=40>B</font><font color="00FF00" size=40>o</font><font color="FFFF00" size=40>U</font><font color="FF7F00" size=40>t</font> <font color="FF0000" size=40>M</font><font color="FF0000" size=40>E</font></center>
@@ -242,127 +294,14 @@
     </tr>
 
   </table> </center>
--->
-<center><font color = blue size = 12 face = cursive>Hi my name is Emily and I like things</font></center>
-<br>
-<center><table border="2px">
-    <head>
-      <center><font color="9400D3" size=40>Here are some things that I like</font></center>
-    </head>
-    <tr>
-      <td><img src="http://i.picasion.com/gl/87/9pZd.gif"></td>
-      <td><img src="https://i.imgur.com/Hi49WtC.jpg" width=500></td>
-    </tr>
-
-    <tr>
-      <td><img src="https://i.imgur.com/3qMHP5z.png" height=500></td>
-      <td><img src="http://i.picasion.com/gl/87/9pZe.gif"></td>
-    </tr>
-
-    <tr>
-      <td><img src="http://i.picasion.com/gl/87/9pZf.gif"></td>
-      <td><img src="https://images-na.ssl-images-amazon.com/images/I/51AyFyg0eIL._SY355_.jpg" height=500></td>
-    </tr>
-
-    <tr>
-      <td><font color = periwinkle size = 8>(playing cards, art, Unicornos, stickers, music, badges, and porn)</font></td>
-      <td>(<img src="http://i.picasion.com/gl/87/9pZq.gif">)</td>
-    </tr>
-
-    <tr>
-      <td><img src="http://i.picasion.com/gl/87/9pZA.gif"></td>
-      <td><img src="https://i.imgur.com/I0hf2zT.jpg" height=500></td>
-    </tr>
-
-    <tr>
-      <td><img src="https://i.imgur.com/yfam1Y8.jpg" height=500></td>
-      <td><img src="http://i.picasion.com/gl/87/9pZH.gif"></td>
-    </tr>
-
-  </table></center>
-<br>
-<br>
-<br>
-<center>
-<font color = white size = 16>Here are some indie dev projects I like.</font>
-<br>
-<font color =white size = 10>Click the picture to go to the thing.</font>
-<br>
-<br>
-<font color = Purple size = 14>Exodemon</font>
-<br>
-<font color = white>A Fast-paced low poly FPS, feels like Doom and has some interesting puzzles. Always being updated, I love the enemy designs and the weapons and I'm really excited to see where this one goes.</font>
-<br>
-<a href="https://kuupu.itch.io/exodemon" target="_parent">
-<img src="http://seiryu.or.tv/Early_Access/Exodemon/Exodemon-02.jpg" width="500" height="300"></a>
-<br>
-<br>
-<font color = Green size = 14>Forager</font>
-<br>
-<font color = white>This ones an adventurey survival exploration game that nails the always-being-busy aspect of good survival games. Available on Steam.</font>
-<br>
-<a href="https://hopfrogsa.net/forager" target="_parent">
-<img src="https://steamcdn-a.akamaihd.net/steam/apps/751780/ss_70ade51f18c6b2e2b4e6bf2c38c6083b338c0441.1920x1080.jpg?t=1550193376" width="500" height="300"></a>
-<br>
-<br>
-<font color = White size = 14>Her Tears Were My Light</font>
-<br>
-<font color = white>A thought-provoking short love story about Time and Space. Adorable art. Made me feel feelings.</font>
-<br>
-<a href="https://nomnomnami.itch.io/her-tears-were-my-light" target="_parent">
-<img src="https://img.itch.zone/aW1hZ2UvNTkzMjUvMjY3MzczLnBuZw==/original/6et15q.png" width="500" height="300"></a>
-<br>
-<br>
-<font color = Red size = 14>Mobs Inc.</font>
-<br>
-<font color = white>You are a demon. Satan is your boss. Think Office Space meets Smash TV</font>
-<br>
-<a href="https://pietro-ferrantelli.itch.io/mobs-inc" target="_parent">
-<img src="https://picon.ngfiles.com/666000/flash_666980_largest_crop.png?f1449345011" width="500" height="300"></a>
-<br>
-<br>
-<font color = Yellow size = 14>My Little Blacksmith Shop</font>
-<br>
-<font color = white>A Shopkeeping game. Make axes and armor, go exploring for materials, make an honest living selling your wares</font>
-<br>
-<a href="https://dasius.itch.io/my-little-blacksmith-shop" target="_parent">
-<img src="https://img.itch.zone/aW1hZ2UvMTExOTYzLzc5NzMxMi5wbmc=/original/V2RS5W.png" width="500" height="300"></a>
-<br>
-<br>
-<font color = Orange size = 14>EVERYTHING IS GOING TO BE OK</font>
-<br>
-<font color = white>Loud, obnoxious, depressing, and genuinely inspiring. More of an experience than a game. A bunch of microgames with a hub world. </font>
-<br>
-<a href="https://alienmelon.itch.io/everything-is-going-to-be-ok" target="_parent">
-<img src="https://img.itch.zone/aW1hZ2UvMTE2MTU4LzUzNzAzOC5wbmc=/original/dwDRgB.png" width="500" height="300"></a>
-<br>
-<br>
-<font color = Blue size = 14>Electric Highways</font>
-<br>
-<font color = white>Exploration game with some nice ambient tracks. Cool to just roam around in for a while, like you might with something like LSD Dream Emulator.</font>
-<br>
-<a href="https://store.steampowered.com/app/412140/Electric_Highways/" target="_parent">
-<img src="https://steamcdn-a.akamaihd.net/steam/apps/412140/ss_dc58b11bc1d95c36055db396165326b4e3502fbd.600x338.jpg?t=1487930671" width="500" height="300"></a>
-<br>
-<br>
-<font color = Pink size = 14>Earthtongue</font>
-<br>
-<font color = white>Alien gardening sandbox lets you watch as the various bugs and fungi of your chosen alien planet coexist or hurtle towards mutual destruction. You also gain a handful of intervention points which give you god powers. Lots of user created content.</font>
-<br>
-<a href="https://store.steampowered.com/app/358070/Earthtongue/" target="_parent">
-<img src="https://steamcdn-a.akamaihd.net/steam/apps/358070/ss_4c58aaa8e4690b8c4fecf1f1a12c00243b933eff.1920x1080.jpg?t=1534088552" width="500" height="300"></a>
-<br>
-<br>
-</center>
 
 <div style="text-align:center">
   <br>
   <br>
    <a href="https://www.reddit.com/r/cats/" target="_parent">
    <center><img src="https://i.imgur.com/arj8vAx.jpg" alt="Waifu" width="250" height="150"></a></center>
-
    <audio controls autoplay loop>
-    <source src="http://66.90.93.122/ost/8-bit-video-game-ringtones-android-game-music/ufavgduv/07-itty-bitty-8-bit.mp3">
+     <source src="http://66.90.93.122/ost/8-bit-video-game-ringtones-android-game-music/ufavgduv/07-itty-bitty-8-bit.mp3">
    </audio>
 
  </div>
