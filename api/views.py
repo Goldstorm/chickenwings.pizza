@@ -1,25 +1,8 @@
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework import status
-from django.utils.http import urlquote
 from django.http import JsonResponse, HttpRequest, HttpResponse
-from django.conf import settings
 from django.utils import timezone
-from ipaddress import ip_address
-from datetime import datetime
 
-import requests
-import pprint
-import re
-import sys
-import os
-import logging
-import json
-import pickle
-import shlex
-import subprocess
-import copy
-import time
 import uuid
 
 class LocalFunctions:
@@ -31,6 +14,7 @@ class LocalFunctions:
         self.response = {
             "time": None,
             "id": None,
+
             "code": None,
             "message": None,
             "results": []
@@ -62,8 +46,9 @@ class LocalFunctions:
             j = build_jResp(param1)
             self.resp('INFO', "Successfully returned the body you sent with method GET!", j)
             return self.jResp(self.response, status=status.HTTP_200_OK, safe=False)
-        
-class API_PROCCESSOR(APIView):
+
+
+class ApiProcessor(APIView):
     def get(self, request, param1, format=None):
         lf = LocalFunctions(request)
         if param1 == '':
