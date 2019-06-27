@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.name == 'nt':
     filename = 'C:\\Users\\{}\\PycharmProjects\\chickenwings.pizza\\nick\\secrets.json'
 else:
-    filename = '/opt/docker/resume/containers/django_site/nick/secrets.json'
+    filename = '/opt/nick/nick/secrets.json'
 
 if filename:
     with open(filename, 'r') as f:
