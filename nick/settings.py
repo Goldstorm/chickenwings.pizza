@@ -22,7 +22,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rlmwt7nyl8yxf)na+6*o(k)1b8@-h@wy=e01d=^32e24&x1-w2'
+
+if os.name == 'nt':
+    filename = 'C:\\Users\\{}\\PycharmProjects\\chickenwings.pizza\\nick\\secrets.json'
+else:
+    filename = '/opt/docker/resume/containers/django_site/nick/secrets.json'
+
+if filename:
+    with open(filename, 'r') as f:
+        key = json.load(f)
+
+# SECRET_KEY = 'rlmwt7nyl8yxf)na+6*o(k)1b8@-h@wy=e01d=^32e24&x1-w2'
+SECRET_KEY = key['secret']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
