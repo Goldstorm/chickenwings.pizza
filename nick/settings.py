@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 if os.name == 'nt':
-    filename = 'C:\\Users\\{}\\PycharmProjects\\chickenwings.pizza\\nick\\secrets.json'
+    filename = 'C:\\Users\\nickg\\PycharmProjects\\chickenwings.pizza\\nick\\secrets.json'
 else:
     filename = '/opt/nick/nick/secrets.json'
 
